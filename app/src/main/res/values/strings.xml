@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Filharmonia</string>
+    <string name="back">Back</string>
+    <string name="newses">Aktualności</string>
+    <string name="repertoir">Repertuar</string>
+    <string name="contests">Konkursy</string>
+    <string name="gellery">Galeria</string>
+    <string name="contact">Kontakt</string>
+</resources>

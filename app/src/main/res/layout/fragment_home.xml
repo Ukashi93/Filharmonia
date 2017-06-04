@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <Button
+        android:id="@+id/buttonNewses"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/corner_button"
+        android:text="@string/newses"
+        android:textAllCaps="false" />
+
+    <Button
+        android:background="@drawable/corner_button"
+        android:id="@+id/buttonRepertoires"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="@string/repertoir"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:textAllCaps="false" />
+    <Button
+        android:background="@drawable/corner_button"
+        android:id="@+id/buttonContest"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="@string/contests"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:textAllCaps="false" />
+
+    <Button
+        android:background="@drawable/corner_button"
+        android:id="@+id/buttonGallery"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/gellery"
+        android:textAllCaps="false" />
+
+    <Button
+        android:background="@drawable/corner_button"
+        android:id="@+id/buttonContact"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/contact"
+        android:textAllCaps="false" />
+</LinearLayout>
