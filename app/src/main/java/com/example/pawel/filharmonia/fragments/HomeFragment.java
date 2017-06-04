@@ -28,6 +28,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         buttonContact = (Button) view.findViewById(R.id.buttonContact);
 
         buttonNewses.setOnClickListener(this);
+        buttonGallery.setOnClickListener(this);
 
         return view;
     }
@@ -37,6 +38,9 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         switch (view.getId()){
             case R.id.buttonNewses:
                 navigationListener.onNavigate(new NewsesFragment());
+                break;
+            case R.id.buttonGallery:
+                navigationListener.onNavigate(new GalleryFragment());
                 break;
         }
     }
