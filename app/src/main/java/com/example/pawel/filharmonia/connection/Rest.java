@@ -14,7 +14,7 @@ public class Rest {
     public static final String SERVER="http://api.stg.appsoup.io/news/";
     private static Gson gson;
     private static OkHttpClient okHttpClient;
-    private static RestInterface restInterface;
+    private static RestInterface restService;
 
     public static OkHttpClient getOkHttpClient() {
         return okHttpClient;
@@ -24,8 +24,8 @@ public class Rest {
         return gson;
     }
 
-    public static RestInterface getRestInterface() {
-        return restInterface;
+    public static RestInterface getRest() {
+        return restService;
     }
     public Rest(){}
 
@@ -44,7 +44,7 @@ public class Rest {
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(okHttpClient)
                 .build();
-        restInterface = retrofit.create(RestInterface.class);
+        restService = retrofit.create(RestInterface.class);
 
         gson = new Gson();
     }
