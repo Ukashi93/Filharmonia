@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pawel.filharmonia.R;
@@ -27,18 +28,20 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class NewsesFragment extends Fragment implements SearchView.OnQueryTextListener, View.OnClickListener,AdapterView.OnItemClickListener {
+public class NewsesFragment extends BaseFragment implements SearchView.OnQueryTextListener,AdapterView.OnItemClickListener {
     private ListView listViewNewses;
     private NewsAdapter adapter = new NewsAdapter();
     private List<News> allNewses = new ArrayList<>();
     private ProgressDialog progressDialog;
-
+    private TextView topBarTitle;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_newses,container,false);
-
+        View topBar = inflater.inflate(R.layout.fragment_top_bar,container,false);
+        topBarTitle = (TextView) topBar.findViewById(R.id.topBarTitle);
+        topBarTitle.setText("sadasdas");
         progressDialog = new ProgressDialog(getContext());
         progressDialog.setMessage(getString(R.string.newsLoading));
         progressDialog.show();
@@ -78,12 +81,6 @@ public class NewsesFragment extends Fragment implements SearchView.OnQueryTextLi
                 }
             }
         });
-
-    }
-
-    @Override
-    public void onClick(View view) {
-
     }
 
     @Override
@@ -105,6 +102,11 @@ public class NewsesFragment extends Fragment implements SearchView.OnQueryTextLi
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
+        Bundle bundle = new Bundle();
+        News newsClass = (News) adapterView.getItemAtPosition(i);
+        bundle.putString("Title",newsClass.getTitle());
+        bundle.putString("Image",newsClass.getImage_link());
+        bundle.putString("Full_Content",newsClass.getFull_content());
+        navigationListener.onNavigate(SingleNewsFragment.newInstance(bundle));
     }
 }
