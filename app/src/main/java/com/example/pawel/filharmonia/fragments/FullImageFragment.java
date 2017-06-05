@@ -12,8 +12,9 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.example.pawel.filharmonia.R;
 
-public class FullImageFragment extends BaseFragment{
+public class FullImageFragment extends BaseFragment implements View.OnClickListener{
     private ImageView photo;
+    private ImageButton bt_close_img_view;
 
     public static FullImageFragment  newInstance (Bundle bundle) {
         FullImageFragment fragment = new FullImageFragment();
@@ -26,6 +27,8 @@ public class FullImageFragment extends BaseFragment{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_image_full_size,container,false);
         photo  = (ImageView) view.findViewById(R.id.img_full_view);
+        bt_close_img_view = (ImageButton) view.findViewById(R.id.bt_close_img_view);
+        bt_close_img_view.setOnClickListener(this);
         showImage();
         return view;
     }
@@ -40,5 +43,10 @@ public class FullImageFragment extends BaseFragment{
         } else {
             Glide.with(getContext()).load(url).into(photo);
         }
+    }
+
+    @Override
+    public void onClick(View v) {
+        navigationListener.onBack();
     }
 }

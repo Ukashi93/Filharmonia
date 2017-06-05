@@ -14,8 +14,8 @@
             android:id="@+id/img_view_news"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_weight="1"
             android:scaleType="fitCenter"
@@ -28,14 +28,14 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginBottom="21dp"
+            android:layout_marginBottom="30dp"
             android:layout_marginEnd="21dp"
             android:layout_marginRight="21dp"
             android:background="@drawable/search_view"
             android:backgroundTint="@color/colorBackground"
+            android:padding="5dp"
             android:scaleType="fitStart"
-            app:srcCompat="@drawable/magnifier"
-            android:padding="5dp"/>
+            app:srcCompat="@drawable/magnifier" />
 
 
     </RelativeLayout>
