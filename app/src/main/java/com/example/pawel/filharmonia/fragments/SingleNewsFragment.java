@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -20,7 +21,7 @@ import org.jsoup.nodes.Document;
 public class SingleNewsFragment extends BaseFragment implements View.OnClickListener{
     private ImageView photo;
     private TextView txt_title;
-    private TextView txt_article;
+    private WebView webViewNewsContent;
 
     public static SingleNewsFragment  newInstance (Bundle bundle) {
         SingleNewsFragment fragment = new SingleNewsFragment();
@@ -37,7 +38,7 @@ public class SingleNewsFragment extends BaseFragment implements View.OnClickList
         zoom_button.setOnClickListener(this);
 
         txt_title = (TextView) view.findViewById(R.id.txt_view_title_news_details);
-        txt_article = (TextView) view.findViewById(R.id.txt_view_article_news_detail);
+        webViewNewsContent = (WebView) view.findViewById(R.id.webViewNewsContent);
         photo = (ImageView) view.findViewById(R.id.img_view_news);
 
         setData();
@@ -63,7 +64,7 @@ public class SingleNewsFragment extends BaseFragment implements View.OnClickList
         Bundle bundle = this.getArguments();
         Glide.with(getContext()).load(getArguments().getString("Image")).into(photo);
         txt_title.setText(bundle.getString("Title"));
-        txt_article.setText(bundle.getString("Full_Content"));
+        webViewNewsContent.loadData(bundle.getString("Full_Content"), "text/html; charset=utf-8", "utf-8");
     }
 
 }
