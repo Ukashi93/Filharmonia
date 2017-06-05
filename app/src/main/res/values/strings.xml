@@ -8,4 +8,7 @@
     <string name="contact">Kontakt</string>
     <string name="newsLoading">Ładowanie aktualności</string>
     <string name="news">Aktualność</string>
+    <string name="adres">Adres:</string>
+    <string name="ul_muzealna_123">ul. Muzealna 123</string>
+    <string name="_00_000_d">00-000 Łódź</string>
 </resources>

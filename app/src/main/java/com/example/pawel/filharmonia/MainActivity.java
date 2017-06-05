@@ -9,6 +9,7 @@ import android.os.Bundle;
 import com.example.pawel.filharmonia.fragments.HomeFragment;
 import com.example.pawel.filharmonia.listeners.NavigationListener;
 import com.example.pawel.filharmonia.listeners.TopBarListener;
+import com.google.android.gms.maps.MapFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationListener, FragmentManager.OnBackStackChangedListener{
 

@@ -38,4 +38,5 @@ dependencies {
     compile "com.github.Raizlabs.DBFlow:dbflow:${dbflow_version}"
 
     compile group: 'org.jsoup', name: 'jsoup', version: '1.10.2'
+    compile 'com.google.android.gms:play-services-maps:7.8.0'
 }
